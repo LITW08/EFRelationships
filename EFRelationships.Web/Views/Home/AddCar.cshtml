@@ -1,0 +1,18 @@
+﻿@model EFRelationships.Data.Person
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 card card-body bg-light">
+
+        <h2>Adding car for @Model.FirstName @Model.LastName</h2>
+        <form method="post" action="/home/addcar">
+            <input type="hidden" name="personId" value="@Model.Id" />
+            <input class="form-control" type="text" name="make" placeholder="Make" />
+            <br />
+            <input class="form-control" type="text" name="model" placeholder="Model" />
+            <br />
+            <input class="form-control" type="text" name="year" placeholder="Year" />
+            <br />
+            <button class="btn btn-primary">Add Car</button>
+        </form>
+    </div>
+</div>

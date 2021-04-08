@@ -1,0 +1,24 @@
+﻿@using EFRelationships.Data
+@model IEnumerable<Person>
+<a href="/home/newperson" class="btn btn-primary">Add Person</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Add Car</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Car Count</th>
+    </tr>
+    @foreach (Person person in Model)
+    {
+        <tr>
+            <td>
+                <a href="/home/addcar?personid=@person.Id" class="btn btn-primary">Add Car</a>
+            </td>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.Age</td>
+            <td>@person.Cars.Count</td>
+        </tr>
+    }
+</table>
